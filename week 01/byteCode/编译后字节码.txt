@@ -1,0 +1,209 @@
+Classfile /D:/jike-workspace/works/src/main/java/com/jikework/works/firstworks/one/ByteCode.class
+  Last modified 2021-8-5; size 1210 bytes
+  MD5 checksum 571fdf2fcb9d2983758ab953d42be568
+  Compiled from "ByteCode.java"
+public class com.jikework.works.firstworks.one.ByteCode
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #17.#46        // java/lang/Object."<init>":()V
+   #2 = Fieldref           #16.#47        // com/jikework/works/firstworks/one/ByteCode.a:I
+   #3 = Fieldref           #16.#48        // com/jikework/works/firstworks/one/ByteCode.b:D
+   #4 = Class              #49            // java/lang/Exception
+   #5 = String             #50            // 输入的num中没有a的对应的倍数
+   #6 = Methodref          #4.#51         // java/lang/Exception."<init>":(Ljava/lang/String;)V
+   #7 = Long               8l
+   #9 = Fieldref           #52.#53        // java/lang/System.out:Ljava/io/PrintStream;
+  #10 = Methodref          #16.#54        // com/jikework/works/firstworks/one/ByteCode.getResult1:(D)D
+  #11 = Methodref          #55.#56        // java/io/PrintStream.println:(D)V
+  #12 = Methodref          #16.#57        // com/jikework/works/firstworks/one/ByteCode.getResult2:(I)I
+  #13 = Methodref          #55.#58        // java/io/PrintStream.println:(I)V
+  #14 = Double             3.0d
+  #16 = Class              #59            // com/jikework/works/firstworks/one/ByteCode
+  #17 = Class              #60            // java/lang/Object
+  #18 = Utf8               a
+  #19 = Utf8               I
+  #20 = Utf8               b
+  #21 = Utf8               D
+  #22 = Utf8               <init>
+  #23 = Utf8               ()V
+  #24 = Utf8               Code
+  #25 = Utf8               LineNumberTable
+  #26 = Utf8               LocalVariableTable
+  #27 = Utf8               this
+  #28 = Utf8               Lcom/jikework/works/firstworks/one/ByteCode;
+  #29 = Utf8               getResult1
+  #30 = Utf8               (D)D
+  #31 = Utf8               num
+  #32 = Utf8               StackMapTable
+  #33 = Utf8               getResult2
+  #34 = Utf8               (I)I
+  #35 = Utf8               i
+  #36 = Utf8               Exceptions
+  #37 = Utf8               main
+  #38 = Utf8               ([Ljava/lang/String;)V
+  #39 = Utf8               args
+  #40 = Utf8               [Ljava/lang/String;
+  #41 = Utf8               d
+  #42 = Utf8               J
+  #43 = Utf8               <clinit>
+  #44 = Utf8               SourceFile
+  #45 = Utf8               ByteCode.java
+  #46 = NameAndType        #22:#23        // "<init>":()V
+  #47 = NameAndType        #18:#19        // a:I
+  #48 = NameAndType        #20:#21        // b:D
+  #49 = Utf8               java/lang/Exception
+  #50 = Utf8               输入的num中没有a的对应的倍数
+  #51 = NameAndType        #22:#61        // "<init>":(Ljava/lang/String;)V
+  #52 = Class              #62            // java/lang/System
+  #53 = NameAndType        #63:#64        // out:Ljava/io/PrintStream;
+  #54 = NameAndType        #29:#30        // getResult1:(D)D
+  #55 = Class              #65            // java/io/PrintStream
+  #56 = NameAndType        #66:#67        // println:(D)V
+  #57 = NameAndType        #33:#34        // getResult2:(I)I
+  #58 = NameAndType        #66:#68        // println:(I)V
+  #59 = Utf8               com/jikework/works/firstworks/one/ByteCode
+  #60 = Utf8               java/lang/Object
+  #61 = Utf8               (Ljava/lang/String;)V
+  #62 = Utf8               java/lang/System
+  #63 = Utf8               out
+  #64 = Utf8               Ljava/io/PrintStream;
+  #65 = Utf8               java/io/PrintStream
+  #66 = Utf8               println
+  #67 = Utf8               (D)V
+  #68 = Utf8               (I)V
+{
+  public com.jikework.works.firstworks.one.ByteCode();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1														// 需要栈深1， 需要局部变量表槽数1，方法的参数个数1 
+         0: aload_0																			// 将第一个引入类型本地变量压入栈， stack = 1
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V	    // 调用类的构造方法，初始化一个无参的object对象
+         4: return																			// 从当前方法返回void
+      LineNumberTable:
+        line 3: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lcom/jikework/works/firstworks/one/ByteCode;			// 局部变量表槽位0的位置有一个名为this的参数, locals = 1, args_size = 1 
+
+  public static double getResult1(double);
+    descriptor: (D)D
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=4, locals=2, args_size=1														// 栈深4， 局部变量表槽数2，方法的参数个数1
+         0: dload_0																			// 将第一个double类型的值推向栈顶，(num) stack = 2
+         1: getstatic     #2                  // Field a:I									// 获取指定类的静态域，并将其压入栈顶；是一个名为a的int型静态变量，stack = 3
+         4: i2d																				// int转double ，stack = 4
+         5: ddiv																			// 将栈顶的两个double型数值相除，并将结果压入栈顶(2.4), stack = 2
+         6: dconst_1																		// 将double型（1）推送至栈顶	,stack  = 4
+         7: dcmpl																			// 比较两double型数值大小，并将结果（1， 0，-1）压入栈顶；当其中一个数值为NaN时，将-1压入栈顶;结果是1，stack = 1
+         8: ifle          17																// 如果条件不满足直接跳转到17，满足继续往下走， stack = 0
+        11: dload_0																			// 将第一个double类型的值推向栈顶，(num) stack = 2
+        12: getstatic     #3                  // Field b:D									// 	获取指定类的静态域，并将其压入栈顶；是一个名为b的double型静态变量，stack = 4
+        15: dmul																			// 将栈顶的两个double型数值相乘，并将结果雅图栈顶（24.0），stack = 2
+        16: dreturn																			// 返回一个double型的数值， stack = 0
+        17: getstatic     #3                  // Field b:D									// 获取指定类的静态域，并将其压入栈顶；是一个名为b的double型静态变量，stack = 2
+        20: dreturn																			// 返回一个double型的数值，stack = 0
+      LineNumberTable:
+        line 15: 0
+        line 16: 11
+        line 18: 17
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      21     0   num   D
+      StackMapTable: number_of_entries = 1
+        frame_type = 17 /* same */
+
+  public static int getResult2(int) throws java.lang.Exception;
+    descriptor: (I)I
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=4, locals=2, args_size=1
+         0: iload_0																							// 将第一个int类型的值推向栈顶，(num) stack = 1
+         1: istore_1																						// 将第一个int型数值从栈顶取出放到局部常量池，stack = 0， locals = 1
+         2: iload_1																							// 将第二个int类型数值推向栈顶， stack = 1
+         3: ifle          28																				// 当栈顶的数值小于等于0时挑战到28，stack = 0
+         6: iload_1																							// 重新将第二个int类型的数值推向栈顶， stack = 1
+         7: getstatic     #2                  // Field a:I													// 获取指定类的静态域，并将其压入栈顶；是一个名为a的int型静态变量，stack = 2
+        10: irem																							// 将栈顶两个int型数据取模运算并压入栈顶， stack = 1
+        11: ifne          22																				// 当栈顶int型数据不等于0时跳转， stack = 0
+        14: iload_1																							// 重新将第二个int类型的数值推向栈顶， stack = 1
+        15: i2d																								// int转double ，stack = 2
+        16: getstatic     #3                  // Field b:D													// 获取指定类的静态域，并将其压入栈顶；是一个名为b的double型静态变量，stack = 4
+        19: dsub																							// 对两个double型数据进行减运算，并将结果压入栈顶，stack = 2
+        20: d2i																								// 将double类型转为int型， stack = 1
+        21: ireturn																							// 返回int型数值， stack = 0
+        22: iinc          1, -1																				// 将第一个int类型的值进行减一操作， stack = 0
+        25: goto          2																					// 跳转到第二部继续执行
+        28: new           #4                  // class java/lang/Exception									// 创建了一个异常对象，stack = 1
+        31: dup																								// stack = 1
+        32: ldc           #5                  // String 输入的num中没有a的对应的倍数						// 将字符串压入栈顶, stack = 2
+        34: invokespecial #6                  // Method java/lang/Exception."<init>":(Ljava/lang/String;)V  // 方法初始化
+        37: athrow																							// 将栈顶异常抛出， stack = 0
+      LineNumberTable:
+        line 28: 0
+        line 29: 6
+        line 30: 14
+        line 28: 22
+        line 33: 28
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            2      26     1     i   I
+            0      38     0   num   I
+      StackMapTable: number_of_entries = 3
+        frame_type = 252 /* append */
+          offset_delta = 2
+          locals = [ int ]
+        frame_type = 19 /* same */
+        frame_type = 250 /* chop */
+          offset_delta = 5
+    Exceptions:
+      throws java.lang.Exception
+
+  public static void main(java.lang.String[]) throws java.lang.Exception;
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=3, locals=3, args_size=1																// 栈深4，局部变量表槽数3，方法的参数个数1
+         0: ldc2_w        #7                  // long 8l											// 将long从常量池中推向栈顶， stack = 2
+         3: lstore_1																				// 将long类型的数值从栈顶放到局部变量表的槽1的位置， stack = 0
+         4: getstatic     #9                  // Field java/lang/System.out:Ljava/io/PrintStream;	// 获取指定类的静态域，并将其压入栈顶；是一个字段的输出引用对象， stack = 1
+         7: lload_1																					// 将第一个long类型的数值加载到栈顶， stack = 3
+         8: l2d																						// 将long转换为double， stack = 3
+         9: invokestatic  #10                 // Method getResult1:(D)D								// 调用一个入参和返回值是double的静态方法
+        12: invokevirtual #11                 // Method java/io/PrintStream.println:(D)V			// 调用一个入参是double的无返回值的实例，stack = 0
+        15: getstatic     #9                  // Field java/lang/System.out:Ljava/io/PrintStream;	// 获取指定类的静态域，并将其压入栈顶；是一个字段的输出引用对象， stack = 1
+        18: lload_1																					// 将第一个long类型的数值加载到栈顶， stack = 3
+        19: l2i																						// 将long转换为int， stack = 2
+        20: invokestatic  #12                 // Method getResult2:(I)I								// 调用一个入参和返回值是int的静态方法
+        23: invokevirtual #13                 // Method java/io/PrintStream.println:(I)V			// 调用一个入参是int的无返回值的实例，stack = 0
+        26: return
+      LineNumberTable:
+        line 37: 0
+        line 38: 4
+        line 39: 15
+        line 40: 26
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      27     0  args   [Ljava/lang/String;
+            4      23     1     d   J
+    Exceptions:
+      throws java.lang.Exception
+
+  static {};
+    descriptor: ()V
+    flags: ACC_STATIC
+    Code:
+      stack=2, locals=0, args_size=0								// 栈深2，局部变量表槽数0，方法的参数个数0
+         0: iconst_5												// 将int型常量5推送至栈顶， stack = 1
+         1: putstatic     #2                  // Field a:I			// 用栈顶的int类型的a的值为指定的类的静态域赋值
+         4: ldc2_w        #14                 // double 3.0d		// 将double类型常量值从常量池中推向栈顶，stack = 2
+         7: putstatic     #3                  // Field b:D			// 用栈顶的double类型的b的值为指定的类的静态域赋值
+        10: return													// 从当前方法返回void， stack = 0
+      LineNumberTable:
+        line 4: 0
+        line 6: 4
+}
+SourceFile: "ByteCode.java"
