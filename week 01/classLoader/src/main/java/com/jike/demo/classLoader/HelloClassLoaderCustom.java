@@ -1,13 +1,16 @@
-package com.jikework.works.firstworks.two;
+package com.jike.demo.classLoader;
 
 
-import java.io.*;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 public class HelloClassLoaderCustom extends ClassLoader{
+
     public static void main(String[] args) {
         try {
             Class<?> helloClass = new HelloClassLoaderCustom().findClass("Hello");
@@ -30,7 +33,9 @@ public class HelloClassLoaderCustom extends ClassLoader{
     protected Class<?> findClass(String name) throws ClassNotFoundException {
         byte[] bytes = null;
         try {
-            bytes = Files.readAllBytes(Paths.get("D:\\java进阶学习\\jike-work\\week 01\\classLoader\\Hello.xlass"));
+            Resource resource = new ClassPathResource("Hello.xlass");
+            InputStream is = resource.getInputStream();
+            bytes = readFileBytes(is);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -38,6 +43,21 @@ public class HelloClassLoaderCustom extends ClassLoader{
             bytes[i] = (byte) (255 - bytes[i]);
         }
         return defineClass(name, bytes, 0, bytes.length);
+    }
+
+    private byte[] readFileBytes(InputStream is){
+        byte[] data = null;
+        try {
+            if(is.available()==0){
+                return data;
+            }
+            data = new byte[is.available()];
+            is.read(data);
+            is.close();
+            return data;
+        } catch (IOException e) {
+            return data;
+        }
     }
 
 }
